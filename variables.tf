@@ -668,12 +668,12 @@ variable "enable_vpc_dns_server" {
 
 variable "gw_software_version" {
   description = "Software Version for the Gateway."
-  type        = number
+  type        = string
   default     = null
 }
 
 variable "gw_image_version" {
   description = "Image Version for the Gateway."
-  type        = number
+  type        = string
   default     = null
 }
