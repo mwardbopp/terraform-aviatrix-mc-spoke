@@ -664,3 +664,16 @@ variable "enable_vpc_dns_server" {
   type        = bool
   default     = null
 }
+
+
+variable "gw_software_version" {
+  description = "Software Version for the Gateway."
+  type        = number
+  default     = null
+}
+
+variable "gw_image_version" {
+  description = "Image Version for the Gateway."
+  type        = number
+  default     = null
+}

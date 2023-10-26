@@ -13,6 +13,7 @@ resource "aviatrix_vpc" "default" {
   resource_group       = var.resource_group
   private_mode_subnets = var.private_mode_subnets
 
+
   dynamic "subnets" {
     for_each = local.cloud == "gcp" ? ["dummy"] : [] #Trick to make block conditional. Count not available on dynamic blocks.
     content {
@@ -80,6 +81,8 @@ resource "aviatrix_spoke_gateway" "default" {
   enable_global_vpc                     = var.enable_global_vpc
   enable_gro_gso                        = var.enable_gro_gso
   enable_vpc_dns_server                 = var.enable_vpc_dns_server
+  software_version                      = var.gw_software_version
+  image_version                         = var.gw_image_version
 
   #BGP Settings
   enable_bgp                       = var.enable_bgp
